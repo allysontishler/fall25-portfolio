@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ally T. — UX Portfolio</title>
+
+  <!-- Kanit font -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- sticky header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <!-- replace this with your svg or logo image if you like -->
+        <a href="index.html" class="logo-link">allyson<br/>tishler.</a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="about.html">About</a>
+        <a href="projects.html">Work</a>
+        <a href="promo.html">Promotional Materials</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+
+        <div class="hero-left">
+          <!-- avatar: replace src below with your avatar image path -->
+          <img class="avatar" src="assets/avatar-placeholder.png" alt="Ally avatar (replace with your image)">
+
+          <h1 class="greeting">
+            Hello, <span class="i-m-ally">I'm Ally.</span>
+          </h1>
+
+          <p class="subtitle">
+            I'm a <span class="highlighted-tag">UX Designer &amp; Researcher</span> creating experiences in digital spaces for everyone.
+          </p>
+
+          <!-- clickable button image OR styled button - either works.
+               If you want to use your button as an image, replace the <button> with an <a><img/></a> and keep the class names. -->
+          <a href="mailto:youremail@example.com" class="cta" id="contact-cta" aria-label="Let's work together">Let's work together</a>
+        </div>
+
+        <div class="hero-right">
+          <!-- sneak peek of project cards - top of images visible initially -->
+          <div class="project-peek-grid">
+            <article class="project-card">
+              <div class="project-image peek">
+                <!-- REPLACE: put path to your image showing Bias in Music Rec (top should be visible) -->
+                <img src="assets/project-music-top-placeholder.jpg" alt="Bias in Music Recommendation Systems - replace image">
+              </div>
+              <h4 class="project-title">Bias in Music Recommendation Systems</h4>
+              <p class="project-desc">A short one-line summary of the study.</p>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image peek">
+                <!-- REPLACE: Desire2Learn / Usability Study top preview -->
+                <img src="assets/project-d2l-top-placeholder.jpg" alt="Desire2Learn - replace image">
+              </div>
+              <h4 class="project-title">Desire2Learn: Usability Study Analysis</h4>
+              <p class="project-desc">A short one-line summary of the study.</p>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GRID OF PROJECTS -->
+    <section class="projects-grid container" aria-label="Recent projects">
+      <article class="card interactive">
+        <div class="card-media">
+          <!-- REPLACE: full card image, not the thumbnail -->
+          <img src="assets/project-1.jpg" alt="Project 1 image (replace)">
+        </div>
+        <div class="card-body">
+          <h3>Bias in Music Recommendation Systems</h3>
+          <p>Examining representation & algorithmic bias across platforms.</p>
+        </div>
+      </article>
+
+      <article class="card interactive">
+        <div class="card-media">
+          <img src="assets/project-2.jpg" alt="Project 2 image (replace)">
+        </div>
+        <div class="card-body">
+          <h3>Desire2Learn: Usability Study</h3>
+          <p>Usability testing and recommendations for LMS flows.</p>
+        </div>
+      </article>
+
+      <article class="card interactive">
+        <div class="card-media">
+          <img src="assets/project-3.jpg" alt="Project 3 image (replace)">
+        </div>
+        <div class="card-body">
+          <h3>Anonymity Armor</h3>
+          <p>Designing privacy-aware dashboards and user flows.</p>
+        </div>
+      </article>
+
+      <article class="card interactive">
+        <div class="card-media">
+          <img src="assets/project-4.jpg" alt="Project 4 image (replace)">
+        </div>
+        <div class="card-body">
+          <h3>The Reality of AI: Is it Worth it?</h3>
+          <p>Critical reflection on AI in consumer products.</p>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ally Tishler — UX Designer & Researcher</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
