@@ -1,5 +1,5 @@
 :root{
-    --bg: #111111;
+    --bg: #181817;
     --panel: #1b1b1b;
     --muted: #9b9b9b;
     --accent1: #9ecde5; /* gradient start */
@@ -94,12 +94,23 @@
   .i-m-ally{ color:var(--accent1); }
   
   /* subtitle with gradient and a white tag behind "UX Designer & Researcher" */
-  .subtitle{
-    font-size:20px;
-    max-width:560px;
-    color:rgba(255,255,255,0.9);
-    line-height:1.3;
-    margin-bottom:18px;
+  .subtitle {
+    font-size: 20px;
+    max-width: 560px;
+    line-height: 1.3;
+    margin-bottom: 18px;
+  
+    /* Gradient text */
+    background: linear-gradient(to bottom, #9ecde5, #ffeaeF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .subtitle {
+    background-size: 100% 200%; /* stretches the gradient */
+    background-repeat: no-repeat;
   }
   
   /* white pill behind the role phrase */
@@ -108,7 +119,6 @@
     background:var(--white);
     color:var(--black);
     padding:6px 10px;
-    border-radius:6px;
     font-weight:700;
     margin:0 6px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.6);
