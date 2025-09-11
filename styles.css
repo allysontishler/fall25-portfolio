@@ -138,6 +138,7 @@ body{
 
 /* Projects Section */
 .projects {
+  background: #111111;
   display: flex;
   flex-direction: column;
   gap: 80px; /* spacing between projects */
