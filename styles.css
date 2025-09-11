@@ -136,47 +136,6 @@ body{
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* right column: project sneak peek */
-.hero-right{flex:0 0 48%;}
-.project-peek-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-/* project card peek style */
-.project-card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius:10px;
-  padding:12px;
-  width:100%;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-  transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s;
-  overflow:hidden;
-}
-
-/* image 'peek' shows only the top portion of the image to create that sneak-peek effect */
-.project-image.peek{
-  height:68px; /* small height to show only the top of the image */
-  overflow:hidden;
-  border-radius:6px;
-  margin-bottom:10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-}
-.project-image.peek img{
-  width:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* titles in the peek */
-.project-title{
-  font-size:14px;
-  margin:4px 0;
-  color:var(--white);
-}
-.project-desc{ font-size:12px; color:var(--muted); }
-
 /* projects grid below - 2x2 */
 .projects-grid{
   display:grid;
