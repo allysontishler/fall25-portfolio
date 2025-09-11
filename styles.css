@@ -66,15 +66,14 @@ body{
 .hero{
   padding:60px 0 40px;
 }
-.hero-inner{
+.hero{
   display:flex;
   gap:32px;
   align-items:flex-start;
   justify-content:space-between;
 }
 
-/* left column */
-.hero-left{flex:0 0 48%;}
+.hero{flex:0 0 48%;}
 .avatar{
   width:88px;
   height:88px;
@@ -108,7 +107,7 @@ body{
   background:var(--white);
   color:var(--black);
   padding:6px 10px;
-  border-radius:6px;
+  border-radius:0px;
   font-weight:700;
   margin:0 6px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.6);
