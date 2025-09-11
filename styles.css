@@ -140,47 +140,76 @@ body{
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* projects grid below - 2x2 */
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:28px;
-  padding:60px 0;
+/* Projects Section */
+.projects {
+  margin: 80px 0; /* space between hero and projects */
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* space between projects */
 }
 
-/* individual card */
-.card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius:12px;
-  padding:0;
-  overflow:hidden;
-  transition: transform .28s ease, box-shadow .28s ease;
-  border:1px solid rgba(255,255,255,0.03);
-}
-.card-media img{
-  width:100%;
-  display:block;
-  object-fit:cover;
-  height:200px;
-}
-.card-body{
-  padding:14px;
-}
-.card-body h3{ margin:0 0 6px; font-size:18px; }
-.card-body p{ margin:0; color:var(--muted); font-size:13px; }
-
-/* interactive hover animation for cards */
-.card.interactive:hover{
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 22px 60px rgba(0,0,0,0.7), 0 0 28px rgba(158,205,229,0.03) inset;
-  border-color: rgba(158,205,229,0.12);
+/* Single Project */
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-/* extra micro-interaction: small glow on project peek hover */
-.project-card:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 22px 60px rgba(0,0,0,0.7), 0 0 20px rgba(158,205,229,0.07);
+/* Project Image Container */
+.project-image {
+  position: relative;
+  width: 100%;
+  max-width: 1240px; /* match your Figma width */
+  margin: 0 auto; /* center on page */
 }
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Project Title + Date Overlay */
+.project-meta {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.project-title {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+  color: #FFFFFF;
+}
+
+.project-date {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 42px;
+  color: #AAAAAA; /* light grey for subtle difference */
+  text-align: right;
+}
+
+/* Project Description */
+.project-description {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33px;
+  max-width: 1240px;
+  margin: 0 auto; /* center description width */
+  color: #FFFFFF;
+}
+
 
 /* footer */
 .site-footer{ padding:30px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,0.02); text-align:center; }
