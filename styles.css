@@ -98,7 +98,7 @@ body{
   margin: 0;
   font-size: 30px;
   font-weight: 250;
-  line-height: 65px;
+  line-height: 35px;
 }
 
 .i-m-ally {
@@ -109,7 +109,7 @@ body{
   font-size: 30px; /* same size as greeting */
   font-weight: 250;
   max-width: 780px;
-  line-height: 65px;
+  line-height: 35px;
   margin-top: 12px;
   display: inline-block; /* ensure gradient applies correctly */
 }
