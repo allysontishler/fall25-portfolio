@@ -82,22 +82,29 @@ body{
   box-shadow: none;
 }
 
-/* gradient title & highlighted box */
-.greeting{
+/* gradient title */
+.greeting {
   font-family: 'Kanit', sans-serif;
-  margin:0;
-  font-size:45px;
-  font-weight:300;
+  margin: 0;
+  font-size: 45px;
+  font-weight: 300;
   line-height: 65px;
-  background: linear-gradient (to bottom, #9ECDE5, #FFEAEF);
+
+  /* gradient text */
+  background: linear-gradient(to bottom, #9ECDE5, #FFEAEF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+  color: transparent; /* fallback to make text visible */
 }
-.i-m-ally{ 
+
+.i-m-ally {
   font-weight: 700;
-  background: linear-gradient (to bottom, #9ECDE5, #FFEAEF);
+  background: linear-gradient(to bottom, #9ECDE5, #FFEAEF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 /* subtitle with gradient and a white tag behind "UX Designer & Researcher" */
