@@ -140,46 +140,48 @@ body{
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
+
+
 /* Projects Section */
 .projects {
-  margin: 80px 0; /* space between hero and projects */
   display: flex;
   flex-direction: column;
-  gap: 80px; /* space between projects */
+  gap: 80px; /* spacing between projects */
+  margin: 80px 0;
 }
 
 /* Single Project */
 .project {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center; /* center the image */
+  gap: 24px;
 }
 
-/* Project Image Container */
+/* Project Image */
 .project-image {
-  position: relative;
   width: 100%;
-  max-width: 1240px; /* match your Figma width */
-  margin: 0 auto; /* center on page */
-}
-
-.project-image img {
-  width: 100%;
-  height: auto;
-  display: block;
+  max-width: 1240px; /* matches Figma width */
   border-radius: 12px;
   object-fit: cover;
+  display: block;
+  margin: 0 auto; /* center the image */
 }
 
-/* Project Title + Date Overlay */
-.project-meta {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
+/* Project Info Below Image */
+.project-info {
+  width: 100%;
+  max-width: 1240px; /* align with image width */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Project Header: title left, date right */
+.project-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: baseline;
 }
 
 .project-title {
@@ -195,8 +197,7 @@ body{
   font-weight: 300;
   font-size: 28px;
   line-height: 42px;
-  color: #AAAAAA; /* light grey for subtle difference */
-  text-align: right;
+  color: #AAAAAA;
 }
 
 /* Project Description */
@@ -205,10 +206,13 @@ body{
   font-weight: 400;
   font-size: 22px;
   line-height: 33px;
-  max-width: 1240px;
-  margin: 0 auto; /* center description width */
   color: #FFFFFF;
 }
+
+
+
+
+
 
 
 /* footer */
