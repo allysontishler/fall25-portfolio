@@ -220,10 +220,7 @@ body{
 
 /* responsive */
 @media (max-width:900px){
-  .hero-inner{ flex-direction:column; }
-  .hero-left, .hero-right{flex:1 1 auto; width:100%}
-  .projects-grid{ grid-template-columns:1fr; }
-  .project-peek-grid{ grid-template-columns:1fr 1fr; }
+  .hero{ flex-direction:column; }
   .avatar{ width:72px; height:72px; }
   .greeting{ font-size:22px; }
 }
