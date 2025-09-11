@@ -74,8 +74,8 @@ body{
 }
 
 .avatar{
-  width:352px;
-  height:352px;
+  width:300px;
+  height:300px;
   object-fit:cover;
   border-radius:50%;
   border: none;
@@ -96,18 +96,18 @@ body{
 .greeting {
   font-family: 'Kanit', sans-serif;
   margin: 0;
-  font-size: 45px;
-  font-weight: 300;
+  font-size: 30px;
+  font-weight: 250;
   line-height: 65px;
 }
 
 .i-m-ally {
-  font-weight: 700;
+  font-weight: 550;
 }
 
 .subtitle {
-  font-size: 45px; /* same size as greeting */
-  font-weight: 400;
+  font-size: 30px; /* same size as greeting */
+  font-weight: 250;
   max-width: 780px;
   line-height: 65px;
   margin-top: 12px;
@@ -121,7 +121,7 @@ body{
   color: var(--black); /* stays black text */
   padding: 3px 5px;
   border-radius: 0px;
-  font-weight: 700;
+  font-weight: 550;
   margin: 0 6px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.6);
   -webkit-background-clip: initial; 
