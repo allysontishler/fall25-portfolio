@@ -78,8 +78,8 @@ body{
   height:300px;
   object-fit:cover;
   border-radius:50%;
-  border: none;
-  box-shadow: none;
+  border: 4px solid rgba (255, 255, 255, 0.06);
+  box-shadow: 0 0 40px #FFEAEF, 0 0 80px #FFEAEF, 0 0 120px #FFEAEF;
 }
 
 /* shared gradient wrapper */
