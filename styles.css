@@ -89,9 +89,15 @@ body{
   font-size:45px;
   font-weight:300;
   line-height: 65px;
+  background: linear-gradient (to bottom, #9ECDE5, #FFEAEF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .i-m-ally{ 
   font-weight: 700;
+  background: linear-gradient (to bottom, #9ECDE5, #FFEAEF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* subtitle with gradient and a white tag behind "UX Designer & Researcher" */
@@ -100,6 +106,7 @@ body{
   font-weight: 400;
   max-width:780px;
   line-height:33px;
+  text-align: center;
 }
 
 /* white pill behind the role phrase */
