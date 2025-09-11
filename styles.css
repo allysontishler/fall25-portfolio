@@ -2,8 +2,8 @@
   --bg: #111111;
   --panel: #1b1b1b;
   --muted: #9b9b9b;
-  --accent1: #9ecde5; /* gradient start */
-  --accent2: #ffeaeF; /* gradient end (note: you wrote FFEAEF, CSS is case-insensitive) */
+  --accent1: #9ecde5;
+  --accent2: #ffeaeF;
   --white: #ffffff;
   --black: #000000;
   --glass: rgba(255,255,255,0.04);
@@ -62,19 +62,13 @@ body{
 }
 .main-nav a:hover{ color:var(--white); transform: translateY(-1px); }
 
-
-
-
 /* hero layout */
 .hero{
   padding:60px 0 40px;
-}
-.hero{
   display:flex;
   flex-direction: column;
   align-items: center;
   gap:24px;
-  padding: 60px 20px 40px;
   text-align: center;
   justify-content:center;
 }
@@ -95,7 +89,6 @@ body{
   font-size:45px;
   font-weight:300;
   line-height: 65px;
-  margin: 0;
 }
 .i-m-ally{ 
   font-weight: 700;
@@ -143,14 +136,14 @@ body{
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-
-
 /* Projects Section */
 .projects {
   display: flex;
   flex-direction: column;
   gap: 80px; /* spacing between projects */
-  margin: 80px 0;
+  margin: 80px auto;
+  align-items: center; /* center the entire projects section */
+  max-width: var(--max-width);
 }
 
 /* Single Project */
@@ -158,16 +151,14 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center; /* center the image */
-  gap: 24px;
+  gap: 16px;
   width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
+  max-width: 800px; /* reasonable width for projects */
 }
 
 /* Project Image */
 .project-image {
   width: 100%;
-  max-width: 1240px; /* matches Figma width */
   border-radius: 12px;
   object-fit: cover;
   display: block;
@@ -178,7 +169,8 @@ body{
 .project-info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
+  width: 100%;
 }
 
 /* Project Header: title left, date right */
@@ -186,6 +178,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  flex-wrap: wrap; /* allows smaller screens to wrap title/date */
 }
 
 .project-title {
@@ -199,8 +192,8 @@ body{
 .project-date {
   font-family: 'Kanit', sans-serif;
   font-weight: 300;
-  font-size: 28px;
-  line-height: 42px;
+  font-size: 22px;
+  line-height: 33px;
   color: #AAAAAA;
 }
 
@@ -213,22 +206,22 @@ body{
   color: #FFFFFF;
 }
 
-
-
-
-
-
-
 /* footer */
-.site-footer{ padding:30px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,0.02); text-align:center; }
+.site-footer{ 
+  padding:30px 0; 
+  color:var(--muted); 
+  border-top:1px solid rgba(255,255,255,0.02); 
+  text-align:center; 
+}
 
 /* responsive */
 @media (max-width:900px){
   .hero{ flex-direction:column; }
   .avatar{ width:72px; height:72px; }
   .greeting{ font-size:22px; }
+  .project-title, .project-date, .project-description{ font-size:18px; line-height:28px; }
+  .project-header{ flex-direction: column; align-items: flex-start; gap:4px; }
 }
 
 /* small accessibility tweak: focus styles */
 a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offset:2px; border-radius:6px; }
-
