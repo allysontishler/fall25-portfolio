@@ -129,28 +129,27 @@ body{
 }
 
 
-/* CTA button with glow */
-.cta {
-  display: inline-block;
-  padding: 18px 42px; /* bigger padding */
-  font-size: 1.75rem; /* scale text size */
-  font-weight: 600;
-  background: linear-gradient(90deg, #9ECDE5, #FFEAEF);
-  color: #111111;
-  border-radius: 12px;
-  text-decoration: none;
-
-  /* glow effect */
-  box-shadow: 0 0 20px #FFEAEF, 0 0 40px #FFEAEF, 0 0 60px #FFEAEF;
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* cta button */
+.cta{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 20px;
+  border-radius:28px;
+  background: linear-gradient(90deg, rgba(158,205,229,0.12), rgba(255,234,239,0.08));
+  color:var(--white);
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid rgba(158,205,229,0.18);
+  transition: all 220ms ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 6px 18px rgba(158,205,229,0.05);
 }
-
-.cta:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #FFEAEF, 0 0 60px #FFEAEF, 0 0 90px #FFEAEF;
+.cta:hover{
+  background:var(--white);
+  color:var(--black);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
-
 
 /* Projects Section */
 .projects {
