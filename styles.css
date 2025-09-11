@@ -68,36 +68,42 @@ body{
 }
 .hero{
   display:flex;
-  gap:32px;
-  align-items:flex-start;
-  justify-content:space-between;
+  flex-direction: column;
+  align-items: center;
+  gap:24px;
+  padding: 60px 20px 40px;
+  text-align: center;
+  justify-content:center;
 }
 
-.hero{flex:0 0 48%;}
 .avatar{
-  width:88px;
-  height:88px;
+  width:352px;
+  height:352px;
   object-fit:cover;
   border-radius:50%;
-  border: 4px solid rgba(255,255,255,0.06);
+  border: none;
+  box-shadow: none;
 }
 
 /* gradient title & highlighted box */
 .greeting{
-  margin:16px 0 6px;
-  font-size:28px;
-  font-weight:600;
-  color:var(--white);
+  font-family: 'Kanit', sans-serif;
+  margin:0;
+  font-size:45px;
+  font-weight:300;
+  line-height: 65px;
+  margin: 0;
 }
-.i-m-ally{ color:var(--accent1); }
+.i-m-ally{ 
+  font-weight: 700;
+}
 
 /* subtitle with gradient and a white tag behind "UX Designer & Researcher" */
 .subtitle{
-  font-size:20px;
-  max-width:560px;
-  color:rgba(255,255,255,0.9);
-  line-height:1.3;
-  margin-bottom:18px;
+  font-size:22px;
+  font-weight: 400;
+  max-width:780px;
+  line-height:33px;
 }
 
 /* white pill behind the role phrase */
