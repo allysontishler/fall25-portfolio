@@ -249,7 +249,6 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 
 
 
-
 /* ABOUT LAYOUT */
 .about-layout {
   display: grid;
@@ -305,10 +304,6 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 .tab:hover { color: var(--white); transform: translateX(6px); }
 .tab.active { color: var(--white); transform: translateX(6px); }
 
-.tab.active::before {
-  background: var(--accent1);
-}
-
 /* Social icons at bottom of sidebar */
 .sidebar-social { margin-top: 56px; display:flex; gap:16px; align-items:center; }
 .social-link {
@@ -321,9 +316,7 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 .social-link:hover { box-shadow: 0 6px 18px rgba(158,205,229,0.06); transform: translateY(-4px); }
 
 /* RIGHT CONTENT */
-.about-content {
-  max-width: calc(100% - 260px);
-}
+.about-content { padding-bottom: 80px; }
 
 /* Section titles */
 .section-title {
@@ -445,11 +438,3 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 a { color: inherit; }
 .muted { color: var(--muted); }
 .small { font-size: 13px; color: var(--muted); }
-
-/* make timeline items more distinct */
-.timeline-item {
-  transition: transform 0.18s ease;
-}
-.timeline-item:hover {
-  transform: translateY(-2px);
-}
