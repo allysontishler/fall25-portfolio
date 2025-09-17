@@ -510,7 +510,7 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 /* small touches */
 a { color: inherit; }
 .muted { color: var(--muted); }
-.small { font-size: 13px; color: var(--muted); }
+.small { font-size: 13px; color: var(--muted); margin-top: 40px;}
 
 /* EDUCATION - show logos as full squares, no shadow or panel */
 .logo-box {
