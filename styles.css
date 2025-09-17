@@ -402,7 +402,7 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 8px;
+  margin-top: 24px;
 }
 
 /* remove background and text, keep size for image */
