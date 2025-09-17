@@ -428,17 +428,35 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 .timeline-body h3 { margin:0 0 6px 0; font-size:18px; color:var(--white); }
 .timeline-body .muted { color:var(--muted); }
 
-/* TOOLS grid */
-.tools-grid { display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; }
+/* TOOLS - just show images */
 .tool-card {
-  width:80px; height:80px; border-radius:11px; display:flex; flex-direction:column; align-items:center; justify-content:center;
-  background:var(--panel);
-  box-shadow: -4px -4px 4px rgba(255,255,255,0.5), 4px 4px 4px rgba(36,125,227,0.5);
-  border:1px solid rgba(255,255,255,0.03);
-  text-align:center;
+  width: 80px;
+  height: 80px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* remove panel background */
+  box-shadow: none; /* remove shadows */
+  border: none; /* remove border */
+  text-align: center;
+  padding: 0;
 }
-.tool-card img{ width:36px; height:36px; margin-bottom:6px; }
-.tool-card span{ font-size:12px; color:var(--white); }
+
+/* make images fill the square container */
+.tool-card img {
+  width: 80px;  /* fill container width */
+  height: 80px; /* fill container height */
+  object-fit: cover; /* cover the square fully */
+  border-radius: 11px; /* match container radius */
+  margin: 0; /* remove previous spacing */
+}
+
+/* hide text under images */
+.tool-card span {
+  display: none;
+}
+
 
 /* UX tags / pills */
 .ux-tags { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
