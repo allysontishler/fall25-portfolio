@@ -22,46 +22,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-// set current year in footer
-document.addEventListener('DOMContentLoaded', () => {
-  const year = document.getElementById('year');
-  if (year) year.textContent = new Date().getFullYear();
 
-  const tabs = document.querySelectorAll('.about-tabs .tab');
-  const sections = document.querySelectorAll('.tab-section');
 
-  // click tab -> scroll to section & highlight tab
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const targetId = tab.dataset.target;
-      const targetSection = document.getElementById(targetId);
-      if (!targetSection) return;
+  // ABOUT PAGE TABS
+const tabs = document.querySelectorAll('.about-tabs .tab');
+const sections = document.querySelectorAll('.tab-section');
 
-      // scroll to section smoothly
-      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Remove active class from all tabs
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
 
-      // highlight active tab
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-    });
-  });
-
-  // update active tab on scroll
-  window.addEventListener('scroll', () => {
-    let currentSection = sections[0];
-    const scrollPos = window.scrollY + 100; // offset for sticky sidebar
-
+    // Show the corresponding section
+    const target = tab.dataset.target;
     sections.forEach(section => {
-      if (section.offsetTop <= scrollPos) {
-        currentSection = section;
+      if(section.id === target){
+        section.classList.add('active');
+      } else {
+        section.classList.remove('active');
       }
     });
 
-    tabs.forEach(tab => {
-      tab.classList.remove('active');
-      if (tab.dataset.target === currentSection.id) {
-        tab.classList.add('active');
-      }
-    });
+    // Smooth scroll to top of the section
+    document.querySelector(`#${target}`).scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// Initialize first tab/section
+if(tabs.length && sections.length){
+  tabs[0].classList.add('active');
+  sections[0].classList.add('active');
+}
