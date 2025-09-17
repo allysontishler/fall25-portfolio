@@ -22,3 +22,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+/* about.js */
+document.addEventListener('DOMContentLoaded', () => {
+  // tabs behavior: click -> activate and scroll into view
+  const tabs = Array.from(document.querySelectorAll('.about-tabs .tab'));
+  const sections = Array.from(document.querySelectorAll('.tab-section'));
+
+  function activateTabById(id) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.target === id));
+    sections.forEach(s => s.classList.toggle('active', s.id === id));
+  }
+
+  // click handlers
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      const target = tab.dataset.target;
+      activateTabById(target);
+      // smoothly scroll the content area to the section top
+      const el = document.getElementById(target);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // IntersectionObserver to update active tab as user scrolls manually
+  const observerOptions = { root: null, rootMargin: '0px 0px -40% 0px', threshold: 0 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activateTabById(entry.target.id);
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(s => observer.observe(s));
+
+  // init first section active if none
+  if (!document.querySelector('.tab-section.active')) {
+    activateTabById(sections[0].id);
+  }
+
+  // footer year (if you want)
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});

@@ -28,10 +28,178 @@
     </div>
   </header>
 
-  <main class="container">
-    <h1>About</h1>
-    <p>Write your about content here.</p>
+
+
+  <!-- ABOUT LAYOUT -->
+  <main class="about-page">
+    <div class="container about-layout">
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="about-sidebar" aria-label="About navigation">
+        <div class="about-heading">
+          <h1>ABOUT ME</h1>
+          <p class="muted">My profile at a glance...</p>
+        </div>
+
+        <nav class="about-tabs" role="navigation" aria-label="About sections">
+          <button class="tab active" data-target="intro">Introduction</button>
+          <button class="tab" data-target="experience">Experience</button>
+          <button class="tab" data-target="skills">Skills</button>
+          <button class="tab" data-target="education">Education</button>
+        </nav>
+
+        <div class="sidebar-social">
+          <a href="#" aria-label="LinkedIn" class="social-link">in</a>
+          <a href="#" aria-label="GitHub" class="social-link">gh</a>
+        </div>
+      </aside>
+
+      <!-- RIGHT CONTENT -->
+      <section class="about-content" aria-live="polite">
+        <!-- INTRO -->
+        <article id="intro" class="tab-section active">
+          <h2 class="section-title">Introduction</h2>
+
+          <div class="intro-grid">
+            <div class="profile-card">
+              <img src="assets/profile.jpg" alt="Profile photo" class="profile-photo">
+
+              <div class="contact-block">
+                <h4>Contact Details</h4>
+                <dl>
+                  <dt>Email</dt>
+                  <dd><a href="mailto:allyy.noel@gmail.com">allyy.noel@gmail.com</a></dd>
+                  <dt>Phone</dt>
+                  <dd><a href="tel:+12694470125">+1 (269)-447-0125</a></dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="intro-bio">
+              <h3 class="name">ALLYSON TISHLER</h3>
+              <div class="subtitle">UX Researcher & Designer – Web Developer – Graphic Designer</div>
+
+              <p class="bio">
+                I’m a UX/UI Researcher and Designer based in East Lansing, MI. I'm passionate about making technology accessible to everyone and finding meaningful ways to bridge gaps and solve problems that matter. I love exploring design ideas from around the world and drawing inspiration from different cultures.
+              </p>
+
+              <div class="interests">
+                <h4>Interest</h4>
+                <div class="interest-grid">
+                  <!-- placeholders; replace image backgrounds with your icons -->
+                  <div class="interest-pill"><img src="assets/ic-music.png" alt=""><span>Music</span></div>
+                  <div class="interest-pill"><img src="assets/ic-lang.png" alt=""><span>Language Learning</span></div>
+                  <div class="interest-pill"><img src="assets/ic-art.png" alt=""><span>Art</span></div>
+                  <div class="interest-pill"><img src="assets/ic-dance.png" alt=""><span>Dance</span></div>
+                  <div class="interest-pill"><img src="assets/ic-travel.png" alt=""><span>Travel</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- EXPERIENCE -->
+        <article id="experience" class="tab-section">
+          <h2 class="section-title">Experience</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="logo-box">
+                <img src="assets/msu-logo.png" alt="MSU logo">
+              </div>
+              <div class="timeline-body">
+                <h3>Michigan State University Asian Studies Center</h3>
+                <div class="muted">Web Developer & Communications Assistant</div>
+                <div class="muted small">April 2025 - Present · East Lansing, Michigan, United States</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="logo-box">
+                <img src="assets/greenstone-logo.png" alt="GreenStone logo">
+              </div>
+              <div class="timeline-body">
+                <h3>GreenStone Farm Credit Service</h3>
+                <div class="muted">Service Desk Intern</div>
+                <div class="muted small">May 2024 - August 2024 · East Lansing, Michigan, United States</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- SKILLS -->
+        <article id="skills" class="tab-section">
+          <h2 class="section-title">Skills</h2>
+
+          <h4>Tools I use</h4>
+          <div class="tools-grid">
+            <!-- each tool card: replace images -->
+            <div class="tool-card"><img src="assets/tool-html.png" alt="HTML"><span>HTML</span></div>
+            <div class="tool-card"><img src="assets/tool-css.png" alt="CSS"><span>CSS</span></div>
+            <div class="tool-card"><img src="assets/tool-react.png" alt="React"><span>React</span></div>
+            <div class="tool-card"><img src="assets/tool-figma.png" alt="Figma"><span>Figma</span></div>
+            <div class="tool-card"><img src="assets/tool-ai.png" alt="Illustrator"><span>Illustrator</span></div>
+            <div class="tool-card"><img src="assets/tool-ps.png" alt="Photoshop"><span>Photoshop</span></div>
+            <div class="tool-card"><img src="assets/tool-id.png" alt="InDesign"><span>InDesign</span></div>
+          </div>
+
+          <h4 style="margin-top:28px;">UX Research & Design</h4>
+          <div class="ux-tags">
+            <span class="pill">Usability Testing</span>
+            <span class="pill">User Interviews</span>
+            <span class="pill">Evaluating HCT</span>
+            <span class="pill">Web Development</span>
+          </div>
+        </article>
+
+        <!-- EDUCATION -->
+        <article id="education" class="tab-section">
+          <h2 class="section-title">Education</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="logo-box"><img src="assets/msu-logo.png" alt="MSU logo"></div>
+              <div class="timeline-body">
+                <h3>M.A. in Media and Information, Specialization in HCI/UX</h3>
+                <div class="muted">Michigan State University</div>
+                <div class="muted small">August 2025 – May 2026 · East Lansing, Michigan, United States</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="logo-box"><img src="assets/yonsei-logo.jpg" alt="Yonsei logo"></div>
+              <div class="timeline-body">
+                <h3>Study Abroad Program, Computer Graphics & Communication Technology</h3>
+                <div class="muted">Yonsei University</div>
+                <div class="muted small">August 2024 – December 2024 · Seoul, South Korea</div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="logo-box"><img src="assets/msu-logo.png" alt="MSU logo"></div>
+              <div class="timeline-body">
+                <h3>B.A. in Information Science, Focus in Human-Centered Technology</h3>
+                <div class="muted">Michigan State University</div>
+                <div class="muted small">August 2022 – May 2025 · East Lansing, Michigan, United States</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ally Tishler — UX Designer & Researcher</p>
+    </div>
+  </footer>
+
+  <script src="about.js"></script>
+</body>
+</html>
+
 
   <footer class="site-footer"><div class="container"><p>© <span id="year-alt"></span> Ally</p></div></footer>
   <script>
