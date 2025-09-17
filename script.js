@@ -28,22 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.about-tabs .tab');
     const sections = document.querySelectorAll('.tab-section');
   
-    // Show intro by default
-    sections.forEach(sec => sec.classList.remove('active'));
-    document.getElementById('intro').classList.add('active');
+    // Make sure only the first section shows on page load
+    sections.forEach((sec, idx) => {
+      sec.style.display = idx === 0 ? 'block' : 'none';
+    });
   
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const targetId = tab.dataset.target;
   
-        // Update active tab
+        // Show the clicked section, hide all others
+        sections.forEach(sec => {
+          sec.style.display = sec.id === targetId ? 'block' : 'none';
+        });
+  
+        // Update tab active state
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-  
-        // Update active section
-        sections.forEach(sec => {
-          sec.classList.toggle('active', sec.id === targetId);
-        });
       });
     });
   });
