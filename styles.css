@@ -370,7 +370,7 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 
 /* intro bio column */
 .intro-bio .name { margin:0; font-size:24px; font-weight:700; }
-.intro-bio .subtitle { margin-top:6px; color:var(--muted); font-weight:300; }
+.intro-bio .subtitle { margin-top:6px; color:var(--muted); font-weight:300; font-size: 16px; }
 .intro-bio .bio { margin-top:16px; color:var(--white); line-height:1.45; max-width:640px; }
 
 /* INTERESTS - only show images */
