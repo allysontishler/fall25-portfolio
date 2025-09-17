@@ -23,3 +23,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.about-tabs .tab');
+    const sections = document.querySelectorAll('.tab-section');
+  
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+  
+        // Show the corresponding section
+        const target = tab.dataset.target;
+        sections.forEach(section => {
+          if(section.id === target){
+            section.classList.add('active');
+          } else {
+            section.classList.remove('active');
+          }
+        });
+  
+        // Scroll to top of section
+        document.querySelector(`#${target}`).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  
+    // Initialize first tab/section
+    if(tabs.length && sections.length){
+      tabs[0].classList.add('active');
+      sections[0].classList.add('active');
+    }
+  });
+  
