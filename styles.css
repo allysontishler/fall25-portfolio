@@ -504,7 +504,7 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 
 /* images take natural size */
 .pill img {
-  max-width: 120px;   /* limit so they don’t get huge */
+  max-width: 150px;   /* limit so they don’t get huge */
   height: auto;       /* keep proportions */
   display: block;
 }
