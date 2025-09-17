@@ -396,13 +396,12 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 .intro-bio .bio { margin-top:16px; color:var(--white); line-height:1.45; max-width:640px; }
 
 /* INTERESTS - only show images */
-.interests h4 { margin:20px 0 8px; }
+.interests h4 { margin:20px 0 8px; margin-top: 40px; }
 
 .interest-grid {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 24px;
 }
 
 /* remove background and text, keep size for image */
