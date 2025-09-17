@@ -24,39 +24,62 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.about-tabs .tab');
-    const sections = document.querySelectorAll('.tab-section');
-  
-    // Smooth scroll when clicking sidebar links
-    tabs.forEach(tab => {
-      tab.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.getElementById(tab.dataset.target);
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+// about.js
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = Array.from(document.querySelectorAll('.about-tabs .tab'));
+  const sections = Array.from(document.querySelectorAll('.tab-section'));
+
+  if (!tabs.length || !sections.length) return;
+
+  // Click -> smooth scroll and immediately set active for better UX
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      const targetId = tab.dataset.target;
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      // scroll smoothly
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // optimistic UI: set the clicked tab active right away
+      tabs.forEach(t => t.classList.toggle('active', t === tab));
     });
-  
-    // Use IntersectionObserver to highlight active tab
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px 0px -60% 0px', 
-      threshold: 0.2, 
-    };
-  
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Remove active from all tabs
-          tabs.forEach(t => t.classList.remove('active'));
-  
-          // Add active to matching tab
-          const tab = document.querySelector(`.about-tabs .tab[data-target="${entry.target.id}"]`);
-          if (tab) tab.classList.add('active');
-        }
-      });
-    }, observerOptions);
-  
-    sections.forEach(section => observer.observe(section));
   });
-  
+
+  // IntersectionObserver that picks the most visible section
+  // Use a fine-grained threshold so intersectionRatio updates smoothly.
+  const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: thresholds
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    // Filter entries that are intersecting
+    const visibleEntries = entries.filter(e => e.isIntersecting);
+    if (visibleEntries.length === 0) return;
+
+    // Choose the entry with the largest intersectionRatio
+    const mostVisible = visibleEntries.reduce((a, b) =>
+      a.intersectionRatio > b.intersectionRatio ? a : b
+    );
+
+    const visibleId = mostVisible.target.id;
+    // Toggle active class on tabs: only the matching one is active
+    tabs.forEach(t => {
+      const shouldBeActive = t.dataset.target === visibleId;
+      t.classList.toggle('active', shouldBeActive);
+    });
+  }, observerOptions);
+
+  // Observe each section
+  sections.forEach(s => observer.observe(s));
+
+  // Initialize active tab based on current viewport (in case user loads in middle)
+  // Trigger a manual check: find the section whose top is closest to viewport top
+  const currentScrollPos = window.scrollY + 120; // offset to consider header height
+  let initial = sections[0].id;
+  for (const sec of sections) {
+    if (sec.offsetTop <= currentScrollPos) initial = sec.id;
+  }
+  tabs.forEach(t => t.classList.toggle('active', t.dataset.target === initial));
+});
