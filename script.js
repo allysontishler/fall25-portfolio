@@ -22,48 +22,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-/* about.js */
+// set current year in footer
 document.addEventListener('DOMContentLoaded', () => {
-  // tabs behavior: click -> activate and scroll into view
-  const tabs = Array.from(document.querySelectorAll('.about-tabs .tab'));
-  const sections = Array.from(document.querySelectorAll('.tab-section'));
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 
-  function activateTabById(id) {
-    tabs.forEach(t => t.classList.toggle('active', t.dataset.target === id));
-    sections.forEach(s => s.classList.toggle('active', s.id === id));
-  }
+  const tabs = document.querySelectorAll('.about-tabs .tab');
+  const sections = document.querySelectorAll('.tab-section');
 
-  // click handlers
+  // click tab -> scroll to section & highlight tab
   tabs.forEach(tab => {
-    tab.addEventListener('click', (e) => {
-      const target = tab.dataset.target;
-      activateTabById(target);
-      // smoothly scroll the content area to the section top
-      const el = document.getElementById(target);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.target;
+      const targetSection = document.getElementById(targetId);
+      if (!targetSection) return;
+
+      // scroll to section smoothly
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // highlight active tab
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
     });
   });
 
-  // IntersectionObserver to update active tab as user scrolls manually
-  const observerOptions = { root: null, rootMargin: '0px 0px -40% 0px', threshold: 0 };
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        activateTabById(entry.target.id);
+  // update active tab on scroll
+  window.addEventListener('scroll', () => {
+    let currentSection = sections[0];
+    const scrollPos = window.scrollY + 100; // offset for sticky sidebar
+
+    sections.forEach(section => {
+      if (section.offsetTop <= scrollPos) {
+        currentSection = section;
       }
     });
-  }, observerOptions);
 
-  sections.forEach(s => observer.observe(s));
-
-  // init first section active if none
-  if (!document.querySelector('.tab-section.active')) {
-    activateTabById(sections[0].id);
-  }
-
-  // footer year (if you want)
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+    tabs.forEach(tab => {
+      tab.classList.remove('active');
+      if (tab.dataset.target === currentSection.id) {
+        tab.classList.add('active');
+      }
+    });
+  });
 });
