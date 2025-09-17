@@ -367,10 +367,28 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 }
 
 /* contact block */
-.contact-block h4 { margin:0 0 8px 0; font-size:18px; font-weight:700; }
-.contact-block dl { margin:0; color:var(--muted); }
-.contact-block dt { font-weight:600; font-size:14px; margin-top:8px; color:var(--white); }
-.contact-block dd { margin:2px 0 0 0; font-size:14px; color:var(--white); }
+.contact-block dl {
+  display: grid;
+  grid-template-columns: max-content 1fr; /* left column fits content, right takes remaining space */
+  gap: 4px 12px; /* vertical gap 4px, horizontal gap 12px */
+  align-items: center; /* vertically center items in each row */
+  margin: 0;
+  color: var(--muted);
+}
+
+.contact-block dt {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--white);
+  margin-top: 0; /* remove vertical spacing since grid handles spacing */
+}
+
+.contact-block dd {
+  margin: 0; /* remove default margin */
+  font-size: 14px;
+  color: var(--white);
+}
+
 
 /* intro bio column */
 .intro-bio .name { margin:0; font-size:24px; font-weight:700; }
