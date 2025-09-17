@@ -28,29 +28,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.about-tabs .tab');
     const sections = document.querySelectorAll('.tab-section');
   
-    // Smooth scroll when clicking the sidebar links
+    // Smooth scroll when clicking sidebar links
     tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
         const target = document.getElementById(tab.dataset.target);
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   
-    // Highlight tab as section comes into view
+    // Use IntersectionObserver to highlight active tab
     const observerOptions = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.3, // 30% of section visible triggers highlight
+      rootMargin: '0px 0px -60% 0px', 
+      threshold: 0.2, 
     };
   
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        const id = entry.target.id;
-        const tab = document.querySelector(`.about-tabs .tab[data-target="${id}"]`);
-  
         if (entry.isIntersecting) {
+          // Remove active from all tabs
           tabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
+  
+          // Add active to matching tab
+          const tab = document.querySelector(`.about-tabs .tab[data-target="${entry.target.id}"]`);
+          if (tab) tab.classList.add('active');
         }
       });
     }, observerOptions);
