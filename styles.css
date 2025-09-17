@@ -373,13 +373,13 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
   gap: 4px 12px; /* vertical gap 4px, horizontal gap 12px */
   align-items: center; /* vertically center items in each row */
   margin: 0;
-  padding-left: 24px;
   color: var(--muted);
 }
 
 .contact-block dt {
   font-weight: 600;
   font-size: 14px;
+  padding-left: 24px;
   color: var(--white);
   margin-top: 0; /* remove vertical spacing since grid handles spacing */
 }
