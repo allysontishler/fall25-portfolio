@@ -24,31 +24,27 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 
-// about.js
-document.addEventListener('DOMContentLoaded', () => {
-  const tabs = Array.from(document.querySelectorAll('.about-tabs .tab'));
-  const sections = Array.from(document.querySelectorAll('.tab-section'));
-
-  if (!tabs.length || !sections.length) return;
-
-  // Show only the first section initially
-  sections.forEach((sec, i) => {
-    sec.classList.toggle('active', i === 0);
-  });
-
-  // Handle tab clicks
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const targetId = tab.dataset.target;
-
-      // Update active tab
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      // Show the matching section only
-      sections.forEach(sec => {
-        sec.classList.toggle('active', sec.id === targetId);
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.about-tabs .tab');
+    const sections = document.querySelectorAll('.tab-section');
+  
+    // Show intro by default
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById('intro').classList.add('active');
+  
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.dataset.target;
+  
+        // Update active tab
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+  
+        // Update active section
+        sections.forEach(sec => {
+          sec.classList.toggle('active', sec.id === targetId);
+        });
       });
     });
   });
-});
+  
