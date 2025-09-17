@@ -333,6 +333,17 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
   opacity: .95;
 }
 
+/* Section titles */
+.section-title-spacing {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 8px 0 22px 0;
+  margin-top: 22px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
 /* Tab sections transitions */
 .tab-section { 
   opacity: 1; 
