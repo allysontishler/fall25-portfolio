@@ -22,3 +22,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+
+
+  // ABOUT PAGE TABS
+const tabs = document.querySelectorAll('.about-tabs .tab');
+const sections = document.querySelectorAll('.tab-section');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Remove active class from all tabs
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    // Show the corresponding section
+    const target = tab.dataset.target;
+    sections.forEach(section => {
+      if(section.id === target){
+        section.classList.add('active');
+      } else {
+        section.classList.remove('active');
+      }
+    });
+
+    // Smooth scroll to top of the section
+    document.querySelector(`#${target}`).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Initialize first tab/section
+if(tabs.length && sections.length){
+  tabs[0].classList.add('active');
+  sections[0].classList.add('active');
+}
