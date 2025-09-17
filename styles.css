@@ -493,3 +493,27 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 a { color: inherit; }
 .muted { color: var(--muted); }
 .small { font-size: 13px; color: var(--muted); }
+
+/* EDUCATION - show logos as full squares, no shadow or panel */
+.logo-box {
+  width: 80px;          /* match other pill sizes */
+  height: 80px;
+  border-radius: 11px;  /* optional, if your images have rounded corners */
+  background: transparent;  /* remove panel background */
+  box-shadow: none;     /* remove shadow */
+  border: none;         /* remove border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;     /* ensure image doesn't spill out */
+  padding: 0;
+}
+
+/* make logos fill the container fully */
+.logo-box img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;     /* fill container fully */
+  border-radius: 11px;   /* match container radius if needed */
+  margin: 0;
+}
