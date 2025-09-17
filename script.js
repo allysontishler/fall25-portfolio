@@ -28,19 +28,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.about-tabs .tab');
     const sections = document.querySelectorAll('.tab-section');
   
-    // Make sure only the first section shows on page load
+    // Make sure only the first section is active on page load
     sections.forEach((sec, idx) => {
-      sec.style.display = idx === 0 ? 'block' : 'none';
+      sec.classList.toggle('active', idx === 0);
     });
   
-    tabs.forEach(tab => {
+    tabs.forEach((tab, idx) => {
+      // make the first tab active initially
+      tab.classList.toggle('active', idx === 0);
+  
       tab.addEventListener('click', () => {
         const targetId = tab.dataset.target;
   
-        // Show the clicked section, hide all others
-        sections.forEach(sec => {
-          sec.style.display = sec.id === targetId ? 'block' : 'none';
-        });
+        // Remove active class from all sections
+        sections.forEach(sec => sec.classList.remove('active'));
+  
+        // Add active class to the clicked section
+        const targetSection = document.getElementById(targetId);
+        if(targetSection) targetSection.classList.add('active');
   
         // Update tab active state
         tabs.forEach(t => t.classList.remove('active'));
