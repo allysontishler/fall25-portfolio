@@ -28,31 +28,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.about-tabs .tab');
     const sections = document.querySelectorAll('.tab-section');
   
+    // Smooth scroll when clicking the sidebar links
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Remove active class from all tabs
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-  
-        // Show the corresponding section
-        const target = tab.dataset.target;
-        sections.forEach(section => {
-          if(section.id === target){
-            section.classList.add('active');
-          } else {
-            section.classList.remove('active');
-          }
-        });
-  
-        // Scroll to top of section
-        document.querySelector(`#${target}`).scrollIntoView({ behavior: 'smooth' });
+        const target = document.getElementById(tab.dataset.target);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   
-    // Initialize first tab/section
-    if(tabs.length && sections.length){
-      tabs[0].classList.add('active');
-      sections[0].classList.add('active');
-    }
+    // Highlight tab as section comes into view
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3, // 30% of section visible triggers highlight
+    };
+  
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const tab = document.querySelector(`.about-tabs .tab[data-target="${id}"]`);
+  
+        if (entry.isIntersecting) {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+        }
+      });
+    }, observerOptions);
+  
+    sections.forEach(section => observer.observe(section));
   });
   

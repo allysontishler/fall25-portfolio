@@ -334,8 +334,12 @@ a:focus, button:focus { outline: 3px solid rgba(158,205,229,0.16); outline-offse
 }
 
 /* Tab sections transitions */
-.tab-section { opacity: 0; transform: translateY(12px); transition: opacity .36s ease, transform .36s ease; display: none; }
-.tab-section.active { display: block; opacity: 1; transform: translateY(0); }
+.tab-section { 
+  opacity: 1; 
+  transform: translateY(0); 
+  transition: none; 
+  display: block; 
+}
 
 /* INTRO GRID */
 .intro-grid {
