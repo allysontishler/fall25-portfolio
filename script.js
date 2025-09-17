@@ -28,29 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.about-tabs .tab');
     const sections = document.querySelectorAll('.tab-section');
   
-    // Make sure only the first section is active on page load
     sections.forEach((sec, idx) => {
       sec.classList.toggle('active', idx === 0);
     });
   
     tabs.forEach((tab, idx) => {
-      // make the first tab active initially
       tab.classList.toggle('active', idx === 0);
   
       tab.addEventListener('click', () => {
         const targetId = tab.dataset.target;
   
-        // Remove active class from all sections
         sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(targetId).classList.add('active');
   
-        // Add active class to the clicked section
-        const targetSection = document.getElementById(targetId);
-        if(targetSection) targetSection.classList.add('active');
-  
-        // Update tab active state
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
       });
     });
   });
+  
   
