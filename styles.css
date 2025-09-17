@@ -496,8 +496,8 @@ a { color: inherit; }
 
 /* EDUCATION - show logos as full squares, no shadow or panel */
 .logo-box {
-  width: 80px;          /* match other pill sizes */
-  height: 80px;
+  width: 113px;          /* match other pill sizes */
+  height: 113px;
   border-radius: 11px;  /* optional, if your images have rounded corners */
   background: transparent;  /* remove panel background */
   box-shadow: none;     /* remove shadow */
@@ -511,8 +511,8 @@ a { color: inherit; }
 
 /* make logos fill the container fully */
 .logo-box img {
-  width: 80px;
-  height: 80px;
+  width: 113px;
+  height: 113px;
   object-fit: cover;     /* fill container fully */
   border-radius: 11px;   /* match container radius if needed */
   margin: 0;
