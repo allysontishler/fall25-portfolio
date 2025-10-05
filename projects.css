@@ -72,7 +72,7 @@
   
   /* Single project card */
   .project-card {
-    flex: 0 0 500px; /* fixed width for horizontal scroll */
+    flex: 0 0 1000px; /* fixed width for horizontal scroll */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -83,7 +83,7 @@
     width: 100%;
     border-radius: 14px;
     object-fit: cover;
-    max-height: 320px;
+    max-height: 600px;
   }
   
   /* Project info */
