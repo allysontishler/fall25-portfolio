@@ -139,4 +139,17 @@
       font-size: 16px;
     }
   }
+
+  .project-link {
+    display: block;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Glow on hover */
+  .project-link:hover {
+    box-shadow: 0 0 40px 12px rgba(158, 205, 229, 0.45);
+    transform: translateY(-2px);
+  }
   
