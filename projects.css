@@ -53,10 +53,13 @@
   /* Projects container */
   .projects-container {
     display: flex;
-    gap: 40px;
+    gap: 60px;
     overflow-x: auto;
     padding-bottom: 40px;
     scroll-behavior: smooth;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   
   .projects-container::-webkit-scrollbar {
@@ -69,17 +72,18 @@
   
   /* Single project card */
   .project-card {
-    flex: 0 0 320px; /* fixed width for horizontal scroll */
+    flex: 0 0 500px; /* fixed width for horizontal scroll */
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
   }
   
   /* Project image */
   .project-card img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 14px;
     object-fit: cover;
+    max-height: 320px;
   }
   
   /* Project info */
