@@ -184,7 +184,7 @@ body{
 .project-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 1px;
   width: 100%;
 }
 
@@ -199,7 +199,7 @@ body{
 .project-title {
   font-family: 'Kanit', sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 42px;
   color: #FFFFFF;
 }
