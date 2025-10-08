@@ -90,6 +90,10 @@ body {
   gap: 20px;
 }
 
+.project-card-1 {
+  padding-top: 10px;
+}
+
 /* Project image */
 .project-card img {
   width: 100%;
