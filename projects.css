@@ -112,18 +112,18 @@ body {
 }
 .project-title {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
   line-height: 28px;
   color: var(--white);
 }
 .project-date {
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1px;
   color: var(--muted);
 }
 .project-description {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 19px;
   color: var(--white);
 }
 
