@@ -587,16 +587,3 @@ a { color: inherit; }
   display: block;
 }
 
-
-/* nav */
-.main-nav a {
-  color: var(--muted);
-  margin-left: 18px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-.main-nav a:hover,
-.main-nav a.active {
-  color: var(--white);
-}
