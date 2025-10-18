@@ -3,31 +3,101 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Ally T.</title>
+  <title>Ally T. — Promotional Materials</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo"><a href="index.html" class="logo-link">allyson<br/>tishler.</a></div>
+      <div class="logo">
+        <a href="index.html" class="logo-link">allyson<br/>tishler.</a>
+      </div>
       <nav class="main-nav">
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="promo.html">Promotional Materials</a>
+        <a href="promo.html" class="active">Promotional Materials</a>
         <a href="resume.html">Resume</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <h1>About</h1>
-    <p>Write your about content here.</p>
+  <!-- PROMOTIONAL MATERIALS LAYOUT -->
+  <main class="promo-page">
+    <div class="container about-layout">
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="about-sidebar" aria-label="Promotional Materials navigation">
+        <div class="about-heading">
+          <h1>PROMOTIONAL MATERIALS</h1>
+          <p class="muted">A showcase of my graphic and digital designs.</p>
+        </div>
+
+        <nav class="about-tabs" role="navigation">
+          <button class="tab active" data-target="posters">Posters</button>
+          <button class="tab" data-target="social">Social Media</button>
+          <button class="tab" data-target="flyers">Event Flyers</button>
+          <button class="tab" data-target="banners">Digital Banners</button>
+        </nav>
+      </aside>
+
+      <!-- RIGHT CONTENT -->
+      <section class="about-content" aria-live="polite">
+        
+        <!-- Posters -->
+        <article id="posters" class="tab-section active">
+          <h2 class="section-title">Posters</h2>
+          <div class="promo-grid">
+            <img src="assets/placeholder1.png" alt="Poster design 1" class="promo-img">
+            <img src="assets/placeholder2.png" alt="Poster design 2" class="promo-img">
+          </div>
+        </article>
+
+        <!-- Social Media -->
+        <article id="social" class="tab-section">
+          <h2 class="section-title">Social Media Graphics</h2>
+          <div class="promo-grid">
+            <img src="assets/placeholder3.png" alt="Social graphic 1" class="promo-img">
+            <img src="assets/placeholder4.png" alt="Social graphic 2" class="promo-img">
+          </div>
+        </article>
+
+        <!-- Flyers -->
+        <article id="flyers" class="tab-section">
+          <h2 class="section-title">Event Flyers</h2>
+          <div class="promo-grid">
+            <img src="assets/placeholder5.png" alt="Flyer 1" class="promo-img">
+            <img src="assets/placeholder6.png" alt="Flyer 2" class="promo-img">
+          </div>
+        </article>
+
+        <!-- Banners -->
+        <article id="banners" class="tab-section">
+          <h2 class="section-title">Digital Banners</h2>
+          <div class="promo-grid">
+            <img src="assets/placeholder7.png" alt="Banner 1" class="promo-img">
+            <img src="assets/placeholder8.png" alt="Banner 2" class="promo-img">
+          </div>
+        </article>
+
+      </section>
+    </div>
   </main>
 
-  <footer class="site-footer"><div class="container"><p>© <span id="year-alt"></span> Ally</p></div></footer>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Ally Tishler — UX Designer & Researcher</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="script.js"></script>
   <script>
-    document.getElementById('year-alt').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+

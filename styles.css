@@ -586,3 +586,25 @@ a { color: inherit; }
   display: block;
 }
 
+/* Promotional Materials */
+
+/* PROMOTIONAL MATERIALS PAGE */
+.promo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.promo-img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.promo-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255,234,239,0.25);
+}
