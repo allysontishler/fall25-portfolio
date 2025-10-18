@@ -194,6 +194,16 @@ body {
   text-transform: uppercase;
 }
 
+.project-details-aa h4 {
+  color: #fdff00;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+
 /* footer */
 .site-footer {
   padding: 30px 0;
