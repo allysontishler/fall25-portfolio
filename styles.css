@@ -622,3 +622,43 @@ a { color: inherit; }
     grid-template-columns: 1fr;
   }
 }
+
+/* Overlay for clickable brochure */
+.promo-overlay-container {
+  position: relative;
+  display: inline-block;
+}
+
+.promo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.4); /* medium blue fade */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  transition: opacity 0.25s ease;
+  padding: 10px;
+}
+
+.promo-overlay-container:hover .promo-overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.promo-overlay-container .promo-img {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.promo-overlay-container:hover .promo-img {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255,234,239,0.25);
+}
