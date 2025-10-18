@@ -239,3 +239,33 @@ body {
   box-shadow: 0 0 40px 12px rgba(158, 205, 229, 0.45);
   transform: translateY(-2px);
 }
+
+/* Upcoming Projects */
+.upcoming-projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 80px; /* space before your first project */
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+.upcoming-projects img {
+  width: 48%;
+  max-width: 500px;
+  border-radius: 14px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upcoming-projects img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(158,205,229,0.35);
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .upcoming-projects img {
+    width: 100%;
+  }
+}
