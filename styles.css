@@ -172,7 +172,7 @@ body{
 }
 
 /* Project Image */
-.project-image {
+.project-link img {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
